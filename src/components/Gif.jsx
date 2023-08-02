@@ -1,11 +1,14 @@
 import React from 'react';
 
-const Gif = () => {
+
+const Gif = (props) => {
+  const { gifId, setSelectedGifId } = props;
+  const url = `https://media.giphy.com/media/${gifId}/giphy.gif`;
+  const handleClick = () => {
+    setSelectedGifId(gifId);
+  };
   return (
-    <div>
-      <h1>hi</h1>
-      <p>how are you</p>
-    </div>
+    <img className="gif" src={url} alt="gif" onClick={handleClick} />
   );
 };
 
